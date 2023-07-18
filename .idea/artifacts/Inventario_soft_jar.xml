@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Inventario_soft:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Inventario_soft_jar</output-path>
+    <root id="archive" name="Inventario_soft.jar">
+      <element id="module-output" name="Inventario_soft" />
+    </root>
+  </artifact>
+</component>

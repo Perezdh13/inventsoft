@@ -3,8 +3,9 @@ package Forms;
 import javax.swing.*;
 
 public class Frm_Desktop {
-    private JButton searchButton;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
+    public JPanel desktop_JPanel;
+    public JButton searchButton;
+    public JButton button2;
+    public JButton button3;
+    public JButton button4;
 }
