@@ -21,8 +21,8 @@ public class Cls_Start {
             JFrame loginFrame = new JFrame("formulario inicio de sesion");
             loginFrame.setContentPane(loginForm.login_Panel);
             loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //cierra el runeo al cerrar la ventana
-           loginFrame.setSize(600, 600);
-          loginFrame.setLocationRelativeTo(null); //centra la ventana
+            loginFrame.setSize(600, 600);
+            loginFrame.setLocationRelativeTo(null); //centra la ventana
             loginFrame.setVisible(true);
 
             loginForm.enterButton.addActionListener(new ActionListener() {
@@ -31,19 +31,19 @@ public class Cls_Start {
                     String user = loginForm.textField1.getText();
                     String password = loginForm.passwordField1.getText();
 
-                    if(user.equals(clsCredentials.getUser())&&password.equals(clsCredentials.getPassword())){
-                        loginFrame.dispose();
-                        JOptionPane.showMessageDialog(null, "Bienvenido " +  user);
+                    if (user.equals(clsCredentials.getUser()) && password.equals(clsCredentials.getPassword())) {
+                        loginFrame.dispose(); //esto cierra loginFrame
+                        JOptionPane.showMessageDialog(null, "Bienvenido " + user);
                         JFrame desktopFrame = new JFrame("Pantalla principal");
                         desktopFrame.setContentPane(desktopForm.desktop_JPanel);
                         desktopFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-                        int width=(int) screenSize.getWidth();
-                        int heigth=(int) screenSize.getHeight();
-                        desktopFrame.setSize(width,heigth);
+                        int width = (int) screenSize.getWidth();
+                        int heigth = (int) screenSize.getHeight();
+                        desktopFrame.setSize(width, heigth);
                         desktopFrame.setLocationRelativeTo(null);
                         desktopFrame.setVisible(true);
-                    }else {
+                    } else {
                         JOptionPane.showMessageDialog(null, "Datos incorrectos.");
                         loginForm.textField1.setText("");
                         loginForm.passwordField1.setText("");

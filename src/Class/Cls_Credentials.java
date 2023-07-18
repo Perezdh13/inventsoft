@@ -9,8 +9,6 @@ public class Cls_Credentials {
         this.password = password;
     }
 
-    private boolean pass;
-
     public String getUser() {
         return user;
     }
@@ -27,11 +25,4 @@ public class Cls_Credentials {
         this.password = password;
     }
 
-    public boolean isPass() {
-        return pass;
-    }
-
-    public void setPass(boolean pass) {
-        this.pass = pass;
-    }
 }
