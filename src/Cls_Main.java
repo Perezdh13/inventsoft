@@ -1,3 +1,4 @@
+import Database.Cls_Data;
 import Forms.Frm_Login;
 import Class.Cls_Start;
 import javax.swing.*;
@@ -7,6 +8,9 @@ public class Cls_Main {
         Cls_Start start = new Cls_Start();
        start.start();
 
+        Cls_Data data = new Cls_Data();
+        data.folder();
+        data.stock();
 
     }
 }

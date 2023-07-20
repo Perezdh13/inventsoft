@@ -1,11 +1,11 @@
 package Class;
 
+import Database.Cls_Credentials;
 import Forms.Frm_Desktop;
 import Forms.Frm_Login;
 
 import javax.swing.*;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,9 +20,9 @@ public class Cls_Start {
         if (clsCredentials.isPass() == false) {
             JFrame loginFrame = new JFrame("formulario inicio de sesion");
             loginFrame.setContentPane(loginForm.login_Panel);
-            loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //cierra el runeo al cerrar la ventana
+            loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             loginFrame.setSize(600, 600);
-            loginFrame.setLocationRelativeTo(null); //centra la ventana
+            loginFrame.setLocationRelativeTo(null);
             loginFrame.setVisible(true);
 
             loginForm.enterButton.addActionListener(new ActionListener() {
@@ -37,10 +37,11 @@ public class Cls_Start {
                         JFrame desktopFrame = new JFrame("Pantalla principal");
                         desktopFrame.setContentPane(desktopForm.desktop_JPanel);
                         desktopFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+                        /*Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
                         int width = (int) screenSize.getWidth();
                         int heigth = (int) screenSize.getHeight();
-                        desktopFrame.setSize(width, heigth);
+                        desktopFrame.setSize(width, heigth);*/
+                        desktopFrame.setSize(1200,700);
                         desktopFrame.setLocationRelativeTo(null);
                         desktopFrame.setVisible(true);
                     } else {

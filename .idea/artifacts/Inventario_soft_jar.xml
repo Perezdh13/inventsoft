@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Inventario_soft_jar</output-path>
     <root id="archive" name="Inventario_soft.jar">
       <element id="module-output" name="Inventario_soft" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../Descargas/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

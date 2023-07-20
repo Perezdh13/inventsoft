@@ -1,9 +1,6 @@
 package Forms;
 
-import Class.Cls_Credentials;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Frm_Login {
     public JButton enterButton;

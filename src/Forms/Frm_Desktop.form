@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Forms.Frm_Desktop">
-  <grid id="27dc6" binding="desktop_JPanel" layout-manager="GridLayoutManager" row-count="5" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="desktop_JPanel" layout-manager="GridLayoutManager" row-count="7" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="645" height="418"/>
     </constraints>
-    <properties/>
+    <properties>
+      <foreground color="-13811525"/>
+    </properties>
     <border type="none"/>
     <children>
-      <component id="1c713" class="javax.swing.JButton" binding="exitButton">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="369" height="38"/>
-          </grid>
-        </constraints>
-        <properties>
-          <icon value="Img/salir.png"/>
-          <text value="Cerrar"/>
-        </properties>
-      </component>
       <component id="eb48f" class="javax.swing.JButton" binding="stockButton">
         <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="10" height="38"/>
           </grid>
         </constraints>
@@ -30,20 +21,9 @@
           <text value="Inventario"/>
         </properties>
       </component>
-      <component id="5402d" class="javax.swing.JButton" binding="billButton">
-        <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="369" height="38"/>
-          </grid>
-        </constraints>
-        <properties>
-          <icon value="Img/venta.png"/>
-          <text value="Facturas"/>
-        </properties>
-      </component>
       <component id="f71e0" class="javax.swing.JButton" binding="customerButton">
         <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="369" height="38"/>
           </grid>
         </constraints>
@@ -52,39 +32,43 @@
           <text value="Clientes"/>
         </properties>
       </component>
-      <hspacer id="bda42">
+      <component id="5402d" class="javax.swing.JButton" binding="billButton">
         <constraints>
-          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="369" height="38"/>
+          </grid>
         </constraints>
-      </hspacer>
-      <hspacer id="b4f9b">
+        <properties>
+          <icon value="Img/venta.png"/>
+          <text value="Facturas"/>
+        </properties>
+      </component>
+      <scrollpane id="921d2">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="7" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-      </hspacer>
-      <scrollpane id="1bd46">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="4" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
+        <properties>
+          <foreground color="-1"/>
+        </properties>
         <border type="none"/>
         <children/>
       </scrollpane>
-      <vspacer id="8f1c3">
+      <vspacer id="bdc84">
         <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="10"/>
-          </grid>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <vspacer id="b216f">
+      <component id="1c713" class="javax.swing.JButton" binding="exitButton">
         <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <minimum-size width="0" height="0"/>
-            <preferred-size width="-1" height="10"/>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="369" height="38"/>
           </grid>
         </constraints>
-      </vspacer>
+        <properties>
+          <icon value="Img/salir.png"/>
+          <text value="Cerrar"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
