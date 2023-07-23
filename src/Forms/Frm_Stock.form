@@ -8,15 +8,15 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="688fa" class="javax.swing.JButton" binding="exitButton">
+      <component id="688fa" class="javax.swing.JButton" binding="deleteItem_Button">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="30" height="25"/>
           </grid>
         </constraints>
         <properties>
-          <icon value="Img/salir.png"/>
-          <text value="Cerrar"/>
+          <icon value="Img/ic_eliminar.png"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="bd5e" class="javax.swing.JTable" binding="stockTable">
@@ -27,20 +27,22 @@
         </constraints>
         <properties/>
       </component>
-      <component id="3ee20" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="3ee20" class="javax.swing.JButton" binding="newItem_button">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <icon value="Img/ic_nuevo.png"/>
+          <text value=""/>
         </properties>
       </component>
-      <component id="ee1b5" class="javax.swing.JButton" binding="button2" default-binding="true">
+      <component id="ee1b5" class="javax.swing.JButton" binding="editItem_button">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <icon value="Img/ic_modificar.png"/>
+          <text value=""/>
         </properties>
       </component>
     </children>
