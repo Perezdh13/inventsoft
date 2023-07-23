@@ -10,8 +10,6 @@ public class Frm_Login {
 
     public Frm_Login() {
 
-
-
     }
 
 

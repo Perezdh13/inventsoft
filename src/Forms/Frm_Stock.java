@@ -1,21 +1,21 @@
 package Forms;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Frm_Stock {
-    private JPanel stockPanel;
-    private JButton stockButton;
-    private JButton customerButton;
-    private JTable stockTable;
-    private JButton billButton;
-    private JButton exitButton;
-
-    public Frm_Stock() {
-
-}
-
-private void generateTable(){
+public class Frm_Stock{
+    public JPanel stock_JPanel;
+    public JTable stockTable;
+    public JButton exitButton;
+    public JButton button1;
+    public JButton button2;
 
 
-}
+    public Frm_Stock(){
+
+    }
+
+
 }
