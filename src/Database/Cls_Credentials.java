@@ -10,7 +10,6 @@ public class Cls_Credentials {
     public Cls_Credentials() {
         this.user = user;
         this.password = password;
-        this.pass= pass;
     }
 
     public String getUser() {

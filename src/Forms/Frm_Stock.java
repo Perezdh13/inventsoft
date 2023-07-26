@@ -1,5 +1,7 @@
 package Forms;
 
+import Class.Forms.Stock.Cls_readStock;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +16,8 @@ public class Frm_Stock{
 
     public Frm_Stock(){
 
+        /*Cls_readStock read = new Cls_readStock();
+        read.readStock(stockTable);*/
         newItem_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

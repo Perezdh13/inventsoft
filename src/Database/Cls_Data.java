@@ -7,9 +7,9 @@ import java.io.IOException;
 
 public class Cls_Data {
 
-
+static Cls_filePaths files = new Cls_filePaths();
     public static void folder() {
-        String folderPath = "D:\\FactoriaF5\\Java\\inventSoftData";
+        String folderPath = files.folder;
         Path dataInventSoft = Paths.get(folderPath);
 
         if (Files.notExists(dataInventSoft)) {
@@ -25,7 +25,7 @@ public class Cls_Data {
     }
 
     public  static void stock(){
-        String stockFile = "D:\\FactoriaF5\\Java\\inventSoftData\\stock.xml";
+        String stockFile = files.stockFile;
         Path dataStock = Paths.get(stockFile);
 
         if(Files.notExists(dataStock)){
