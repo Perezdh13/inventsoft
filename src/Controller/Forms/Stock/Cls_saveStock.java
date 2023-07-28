@@ -1,4 +1,4 @@
-package Class.Forms.Stock;
+package Controller.Forms.Stock;
 
 import Database.Cls_filePaths;
 import Forms.Frm_InsertItem;
@@ -17,14 +17,13 @@ static Cls_filePaths files = new Cls_filePaths();
 
                 FileWriter writer = new FileWriter(archivoXML);
 
-                writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                 writer.write("<items>\n");
 
                 String ref = ref_TextField.getText();
                 String name = name_TextField.getText();
-                String pvp = PVP_TextField.getText();
-                String units = units_TextField.getText();
-                String neto = neto_TextField.getText();
+                int pvp = Integer.parseInt(PVP_TextField.getText());
+                int units = Integer.parseInt(units_TextField.getText());
+                int neto = Integer.parseInt(neto_TextField.getText());
 
                 writer.write("\t<item>\n");
                 writer.write("\t\t<ref>" + ref + "</ref>\n");
@@ -33,6 +32,7 @@ static Cls_filePaths files = new Cls_filePaths();
                 writer.write("\t\t<neto>" + neto + "</neto>\n");
                 writer.write("\t\t<units>" + units + "</units>\n");
                 writer.write("\t</item>\n");
+
 
 
                 writer.write("</items>");

@@ -1,5 +1,6 @@
 package Forms;
 
+import Controller.Forms.Stock.Cls_readStock;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -24,24 +25,18 @@ public class Frm_Desktop extends JPanel {
             System.out.println("Botón de stock presionado.");
             if (frmStock != null && frmStock.stock_JPanel != null) {
                 screen.setLayout(new GridLayout(1,1));
-                // Remueve cualquier otro componente que esté en el JPanel screen
                 screen.removeAll();
-                // Agrega el stock_JPanel al JPanel screen
                 screen.add(frmStock.stock_JPanel);
-                // Refresca el JPanel para que se muestre el stock_JPanel
+                screen.add(frmStock.scrollTable);
                 screen.revalidate();
                 screen.repaint();
+                Cls_readStock read = new Cls_readStock();
+                read.readStock();
             }
-//            screen.add(frmStock.stock_JPanel);
-//            screen.revalidate();
-//            screen.repaint();
-//            JFrame stockFrame = new JFrame("pantalla de stock");
-//            stockFrame.setContentPane(frmStock.stock_JPanel);
-//            stockFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//            stockFrame.setSize(1200,700);
-//            stockFrame.setLocationRelativeTo(null);
-//            stockFrame.setVisible(true);
         }
+
+
+
     });
     customerButton.addActionListener(new ActionListener() {
         @Override

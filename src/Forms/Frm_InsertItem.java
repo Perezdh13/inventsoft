@@ -1,6 +1,6 @@
 package Forms;
 
-import Class.Forms.Stock.Cls_saveStock;
+import Controller.Forms.Stock.Cls_saveStock;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

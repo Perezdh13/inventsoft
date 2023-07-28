@@ -1,7 +1,5 @@
 import Database.Cls_Data;
-import Class.Cls_shift;
-import Class.Cls_Start;
-import javax.swing.*;
+import Controller.Cls_Start;
 
 public class Cls_Main {
     public static void main(String[] args){
@@ -12,7 +10,7 @@ public class Cls_Main {
         data.folder();
         data.stock();
 
-        Cls_shift shift = new Cls_shift();
+
 
 
 
