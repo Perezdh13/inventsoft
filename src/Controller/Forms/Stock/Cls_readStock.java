@@ -15,9 +15,15 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class Cls_readStock {
  Cls_filePaths file = new Cls_filePaths();
+ public List<StockItem> stockItems;
+
+ public class StockItem{
+
+ }
  public String ref;
  public String name;
  public int pvp;
@@ -67,7 +73,6 @@ public class Cls_readStock {
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (SAXException e) {
-            throw new RuntimeException(e);
         }
     }
 }

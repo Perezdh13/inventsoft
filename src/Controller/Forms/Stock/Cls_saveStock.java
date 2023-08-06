@@ -14,8 +14,8 @@ public class Cls_saveStock extends Frm_InsertItem {
 
             File archivoXML = new File(files.stockFile);
 
-            //FileWriter writer = new FileWriter(archivoXML);
-            //writer.write("<items>\n");
+
+
 
             FileOutputStream fileOutputStream = new FileOutputStream(archivoXML, true);
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
@@ -26,6 +26,8 @@ public class Cls_saveStock extends Frm_InsertItem {
             int pvp = Integer.parseInt(PVP_TextField.getText());
             int units = Integer.parseInt(units_TextField.getText());
             int neto = Integer.parseInt(neto_TextField.getText());
+
+            //writer.write("<items>\n");
 
             writer.write("\t<item>\n");
             writer.write("\t\t<ref>" + ref + "</ref>\n");
