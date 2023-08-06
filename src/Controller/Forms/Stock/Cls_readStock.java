@@ -7,6 +7,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -20,6 +23,23 @@ public class Cls_readStock {
  public int pvp;
  public int neto;
  public int units;
+
+ public JScrollPane scrollPane;
+
+
+  public void createTable(){
+     String[] columnNames = {"Ref", "Nombre", "PVP", "Neto", "Unidades"};
+     Object[][] data = {
+             {ref, name,pvp,neto,units},
+
+     };
+     DefaultTableModel tableModel = new DefaultTableModel(data, columnNames);
+
+
+        JTable table = new JTable(tableModel);
+        scrollPane = new JScrollPane(table);
+ }
+
     public void readStock() {
         File xmlFile = new File(file.stockFile);
 

@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Frm_InsertItem extends JFrame {
-    public JButton add_Button;
+    public JButton Ok_Button;
     public JPanel insertItem;
     public JTextField neto_TextField;
     public JTextField PVP_TextField;
@@ -20,7 +20,7 @@ public class Frm_InsertItem extends JFrame {
     public JLabel Units;
 
     public Frm_InsertItem() {
-        add_Button.addActionListener(new ActionListener() {
+        Ok_Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Cls_saveStock save = new Cls_saveStock();

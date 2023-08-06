@@ -7,35 +7,22 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
 
 public class Frm_Stock {
     public JPanel stock_JPanel;
-
     public JButton deleteItem_Button;
     public JButton newItem_button;
     public JButton editItem_button;
-    public JScrollPane scrollTable;
-
+    public JPanel tablePanel;
+    //public JScrollPane scrollPane;
 
     public Frm_Stock() {
+
         Cls_readStock readStock = new Cls_readStock();
-
-        String[] columnNames = {"Ref", "Nombre", "PVP", "Neto", "Unidades"};
-        Object[][] data = {
-                {readStock.ref, readStock.name, readStock.pvp,readStock.neto, readStock.units},
-                {"002", "Producto 2", 15.0, 12.5, 50},
-
-        };
-        DefaultTableModel tableModel = new DefaultTableModel(data, columnNames);
-
-        JTable table = new JTable(tableModel);
-        scrollTable = new JScrollPane(table);
-
-
-
-
-
+        readStock.readStock();
+        readStock.createTable();
+        tablePanel.setLayout(new BorderLayout());
+        tablePanel.add(readStock.scrollPane, BorderLayout.CENTER);
 
         newItem_button.addActionListener(new ActionListener() {
             @Override
@@ -48,8 +35,8 @@ public class Frm_Stock {
                 insertItemFrame.setVisible(true);
             }
         });
-    }
 
+    }
 
 
 }

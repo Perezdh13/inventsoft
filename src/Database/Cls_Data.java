@@ -1,5 +1,6 @@
 package Database;
 
+import java.io.FileWriter;
 import java.nio.file.Path;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -15,6 +16,7 @@ static Cls_filePaths files = new Cls_filePaths();
         if (Files.notExists(dataInventSoft)) {
             try {
                 Files.createDirectories(dataInventSoft);
+
                 System.out.println("carpeta de archivos creada");
             } catch (IOException e) {
                 System.out.println("no se pudo crear la carpeta: " + e.getMessage());

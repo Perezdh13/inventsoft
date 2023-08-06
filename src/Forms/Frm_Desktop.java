@@ -13,11 +13,12 @@ public class Frm_Desktop extends JPanel {
     private JButton billButton;
     private JButton exitButton;
     private JPanel screen;
-    private Frm_Stock frmStock;
+
 
     public Frm_Desktop() {
 
-        frmStock = new Frm_Stock();
+     Frm_Stock   frmStock = new Frm_Stock();
+
    stockButton.addActionListener(new ActionListener() {
 
         @Override
@@ -27,7 +28,6 @@ public class Frm_Desktop extends JPanel {
                 screen.setLayout(new GridLayout(1,1));
                 screen.removeAll();
                 screen.add(frmStock.stock_JPanel);
-                screen.add(frmStock.scrollTable);
                 screen.revalidate();
                 screen.repaint();
                 Cls_readStock read = new Cls_readStock();
