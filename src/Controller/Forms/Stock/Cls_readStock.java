@@ -1,7 +1,6 @@
 package Controller.Forms.Stock;
 
 import Database.Cls_filePaths;
-import Forms.Frm_Stock;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -9,45 +8,41 @@ import org.xml.sax.SAXException;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cls_readStock {
- Cls_filePaths file = new Cls_filePaths();
- public List<StockItem> stockItems;
-
- public class StockItem{
-
- }
- public String ref;
- public String name;
- public int pvp;
- public int neto;
- public int units;
-
- public JScrollPane scrollPane;
+    Cls_filePaths file = new Cls_filePaths();
+    public List<Cls_Item> clsItems;
+    public JScrollPane scrollPane;
 
 
-  public void createTable(){
-     String[] columnNames = {"Ref", "Nombre", "PVP", "Neto", "Unidades"};
-     Object[][] data = {
-             {ref, name,pvp,neto,units},
+    public void createTable() {
+        String[] columnNames = {"Ref", "Nombre", "PVP", "Neto", "Unidades"};
+        Object[][] data = new Object[clsItems.size()][5];
 
-     };
-     DefaultTableModel tableModel = new DefaultTableModel(data, columnNames);
+        for (int i = 0; i < clsItems.size(); i++) {
+            Cls_Item clsItem = clsItems.get(i);
+            data[i][0] = clsItem.ref;
+            data[i][1] = clsItem.name;
+            data[i][2] = clsItem.pvp;
+            data[i][3] = clsItem.neto;
+            data[i][4] = clsItem.units;
+        }
 
-
+        DefaultTableModel tableModel = new DefaultTableModel(data, columnNames);
         JTable table = new JTable(tableModel);
         scrollPane = new JScrollPane(table);
- }
+    }
 
     public void readStock() {
         File xmlFile = new File(file.stockFile);
+        clsItems = new ArrayList<>();
 
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -55,24 +50,23 @@ public class Cls_readStock {
             Document doc = dBuilder.parse(xmlFile);
 
             doc.getDocumentElement().normalize();
-            NodeList nodeList = doc.getElementsByTagName("items");
+            NodeList nodeList = doc.getElementsByTagName("item");
+
 
             for (int i = 0; i < nodeList.getLength(); i++) {
                 Element personElement = (Element) nodeList.item(i);
-                 ref = personElement.getElementsByTagName("ref").item(0).getTextContent();
-               name = personElement.getElementsByTagName("name").item(0).getTextContent();
-                 pvp = Integer.parseInt(personElement.getElementsByTagName("pvp").item(0).getTextContent());
-                 neto = Integer.parseInt(personElement.getElementsByTagName("neto").item(0).getTextContent());
-                units = Integer.parseInt(personElement.getElementsByTagName("units").item(0).getTextContent());
-                System.out.println("Ref: " + ref + ", Nombre: " + name + ", PVP: " + pvp + ", Neto: " + neto + ", unidades: " + units);
+                String ref = personElement.getElementsByTagName("ref").item(0).getTextContent();
+                String name = personElement.getElementsByTagName("name").item(0).getTextContent();
+                int pvp = Integer.parseInt(personElement.getElementsByTagName("pvp").item(0).getTextContent());
+                int neto = Integer.parseInt(personElement.getElementsByTagName("neto").item(0).getTextContent());
+                int units = Integer.parseInt(personElement.getElementsByTagName("units").item(0).getTextContent());
+                Cls_Item clsItem = new Cls_Item(ref, name, pvp, neto, units);
+                clsItems.add(clsItem);
             }
 
 
-        } catch (ParserConfigurationException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (SAXException e) {
+        } catch (ParserConfigurationException | IOException | SAXException e) {
+            e.printStackTrace();
         }
     }
 }
