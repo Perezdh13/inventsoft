@@ -25,7 +25,6 @@ public class Frm_InsertItem extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 Cls_saveStock save = new Cls_saveStock();
                 save.saveData(ref_TextField,name_TextField,PVP_TextField,neto_TextField,units_TextField);
-
             }
         });
     }

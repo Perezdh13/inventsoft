@@ -5,6 +5,7 @@ import Forms.Frm_InsertItem;
 
 import javax.swing.*;
 import java.io.*;
+import java.nio.file.Files;
 
 public class Cls_saveStock extends Frm_InsertItem {
     static Cls_filePaths files = new Cls_filePaths();
@@ -15,34 +16,36 @@ public class Cls_saveStock extends Frm_InsertItem {
             File archivoXML = new File(files.stockFile);
 
 
-
-
-            FileOutputStream fileOutputStream = new FileOutputStream(archivoXML, true);
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
-            BufferedWriter writer = new BufferedWriter(outputStreamWriter);
+            String existingContent = "";
+            if (archivoXML.exists()) {
+                existingContent = Files.readString(archivoXML.toPath());
+            }
 
             String ref = ref_TextField.getText();
             String name = name_TextField.getText();
-            int pvp = Integer.parseInt(PVP_TextField.getText());
+            double pvp = Double.parseDouble(PVP_TextField.getText());
+            double neto = Double.parseDouble(neto_TextField.getText());
             int units = Integer.parseInt(units_TextField.getText());
-            int neto = Integer.parseInt(neto_TextField.getText());
 
-            //writer.write("<items>\n");
+            String newItem =
+                    "\t<item>\n" +
+                            "\t\t<ref>" + ref + "</ref>\n" +
+                            "\t\t<name>" + name + "</name>\n" +
+                            "\t\t<pvp>" + pvp + "</pvp>\n" +
+                            "\t\t<neto>" + neto + "</neto>\n" +
+                            "\t\t<units>" + units + "</units>\n" +
+                            "\t</item>\n";
 
-            writer.write("\t<item>\n");
-            writer.write("\t\t<ref>" + ref + "</ref>\n");
-            writer.write("\t\t<name>" + name + "</name>\n");
-            writer.write("\t\t<pvp>" + pvp + "</pvp>\n");
-            writer.write("\t\t<neto>" + neto + "</neto>\n");
-            writer.write("\t\t<units>" + units + "</units>\n");
-            writer.write("\t</item>\n");
 
-            //writer.write("</items>");
+            String newContent = existingContent.replace("</items>", newItem + "</items>");
 
+
+            FileWriter writer = new FileWriter(archivoXML);
+            writer.write(newContent);
             writer.close();
 
-
             JOptionPane.showMessageDialog(this, "Datos guardados correctamente ");
+
 
         } catch (IOException ex) {
             ex.printStackTrace();

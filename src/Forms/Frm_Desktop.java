@@ -13,6 +13,7 @@ public class Frm_Desktop extends JPanel {
     private JButton billButton;
     private JButton exitButton;
     private JPanel screen;
+    private JButton settingButton;
 
 
     public Frm_Desktop() {
