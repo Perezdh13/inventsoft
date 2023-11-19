@@ -80,6 +80,7 @@ public class Cls_readStock {
                 NodeList nodeList = doc.getElementsByTagName("item");
 
 
+
                 for (int i = 0; i < nodeList.getLength(); i++) {
                     Element personElement = (Element) nodeList.item(i);
                     String ref = personElement.getElementsByTagName("ref").item(0).getTextContent();

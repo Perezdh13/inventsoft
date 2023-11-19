@@ -26,13 +26,19 @@ static Cls_filePaths files = new Cls_filePaths();
         }
     }
 
-    public  static void stock(){
+   public  static void stock(){
         String stockFile = files.stockFile;
         Path dataStock = Paths.get(stockFile);
 
         if(Files.notExists(dataStock)){
             try{
                 Files.createFile((dataStock));
+                    String formatDocument =
+                            "<items>\n" + "</items>";
+
+                    FileWriter write = new FileWriter(stockFile);
+                    write.write(formatDocument);
+                    write.close();
                 System.out.println("archivo de stock creado");
             }catch(IOException a){
                 System.out.println(("no se pudo crear el archivo: "+a.getMessage()));
@@ -41,4 +47,6 @@ static Cls_filePaths files = new Cls_filePaths();
             System.out.println("ya existe el archivo dataStock");
         }
     }
+
+
 }

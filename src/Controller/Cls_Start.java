@@ -31,7 +31,7 @@ public class Cls_Start {
                     String password = loginForm.passwordField1.getText();
 
                     if (user.equals(clsCredentials.getUser()) && password.equals(clsCredentials.getPassword())) {
-                        loginFrame.dispose(); //esto cierra loginFrame
+                        loginFrame.dispose();
                         JOptionPane.showMessageDialog(null, "Bienvenido " + user);
                         JFrame desktopFrame = new JFrame("Pantalla principal");
                         desktopFrame.setContentPane(desktopForm.desktop_JPanel);
